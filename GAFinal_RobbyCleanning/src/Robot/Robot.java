@@ -28,6 +28,7 @@ public class Robot {
                 gene[i] = Character.digit(s.charAt(i), 10);
             }
         }
+
         public void copyGene(int[] newGene){
             for(int i=0;i<gene.length;i++){
                 this.gene[i] = newGene[i];

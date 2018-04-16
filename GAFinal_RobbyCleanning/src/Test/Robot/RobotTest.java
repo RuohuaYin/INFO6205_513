@@ -24,6 +24,28 @@ public class RobotTest {
 
     }
 
+    @Test
+    public void testInit_Gene(){
+        Robot a = new Robot();
+        a.init_gene();
+        for(int i=0;i<a.gene.length;i++){
+            Assert.assertNotEquals(8,a.gene[i]);
+        }
+    }
+
+    @Test
+    public void testMoveUp(){
+        Map a = new Map();
+        a.init_map(10,10,0.5);
+//        a.showMap();
+//        a.showMapInSymbol();
+
+        Robot r = new Robot();
+        r.pos[0] = 3;
+        r.pos[1] = 3;
+        r.moveUp(a.map);
+        Assert.assertTrue(r.pos[0]-3 == -1);
+    }
 
     @Test
     public void testClean(){
@@ -34,12 +56,12 @@ public class RobotTest {
         Map a = new Map();
         a.init_map(EVOLUTION.ROW,EVOLUTION.COL,EVOLUTION.POSSIBILITY);
         a.showMapInSymbol();
-        for(int i=0;i<200;i++){
+        for(int i=0;i<100;i++){
             System.out.println("STEP: " + i + " SOCORE: "+ r1 .score);
             r1.singleAction(a.map);
             a.showMapInSymbol();
             try {
-                Thread.sleep(1000);
+                Thread.sleep(0);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

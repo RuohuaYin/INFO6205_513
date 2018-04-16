@@ -17,8 +17,5 @@ However, robot Robby is not clever and capable enough with his limited perceptio
 ![image](https://user-images.githubusercontent.com/38411180/38786957-32406e28-40f9-11e8-9586-d070e7d1ea27.png)
 
 Our aim is to find out the best strategy for Robby to collect the most numerous cans in the limited movements via Genetic Algorithms. Broadly speaking, Robby first percept the status of his surroundings then make movements according to his genes.
-
-![image](https://user-images.githubusercontent.com/38411180/38787028-ac085d74-40f9-11e8-9123-6948e7ea4161.png)
-
-
+  
 <img width="1245" alt="3" src="https://user-images.githubusercontent.com/38411180/38787262-f40e3e26-40fa-11e8-8afb-8f91241be15b.png">

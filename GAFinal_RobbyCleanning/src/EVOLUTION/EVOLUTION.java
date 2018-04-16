@@ -38,12 +38,13 @@ public class EVOLUTION {
             for(int pop=0;pop<POPULATION;pop++){    //each Robot
                 zeroG.generation[pop].init_position(ROW,COL);
                 a.init_map(ROW,COL,POSSIBILITY);
+                zeroG.generation[pop].initializeTraceMap(a.map);
                 for(int move=0;move<MOVETIMES;move++){
                     zeroG.generation[pop].singleAction(a.map);
                 }
             }
-//System.out.println(N + " GENERATION BEST SCORE: "+zeroG.getBestScore() + " AVERAGE SCORE: "+ zeroG.getAverageScore());
-            System.out.println(N+","+zeroG.getBestScore()+","+zeroG.getAverageScore());
+System.out.println(N + " GENERATION BEST SCORE: "+zeroG.getBestScore() + " AVERAGE SCORE: "+ zeroG.getAverageScore());
+            //System.out.println(N+","+zeroG.getBestScore()+","+zeroG.getAverageScore());
             zeroG = zeroG.generateNewGeneration();
         }
 
@@ -60,6 +61,7 @@ public class EVOLUTION {
         testRobot.pos[0]=5;
         testRobot.pos[1]=5;
         a.init_map(ROW,COL,POSSIBILITY);
+        testRobot.initializeTraceMap(a.map);
        // int[][] match
         for(int i=0;i<MOVETIMES;i++){
             System.out.println("STEP: " + i + " SOCORE: "+ testRobot.score);

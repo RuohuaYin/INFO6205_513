@@ -21,3 +21,4 @@ Our aim is to find out the best strategy for Robby to collect the most numerous 
 ![image](https://user-images.githubusercontent.com/38411180/38787028-ac085d74-40f9-11e8-9123-6948e7ea4161.png)
 
 
+<img width="1245" alt="3" src="https://user-images.githubusercontent.com/38411180/38787262-f40e3e26-40fa-11e8-8afb-8f91241be15b.png">

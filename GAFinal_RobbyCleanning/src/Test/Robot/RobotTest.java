@@ -53,13 +53,17 @@ public class RobotTest {
         r1.init_position(EVOLUTION.ROW,EVOLUTION.COL);
         r1.getGenebyString("042032146246003105403412441102101563101002603445040312342340250320221123414154445666660100662660463165645145666660012661066662646345416665303563666321406066055134116044163606111036532050435464042516143462001512253354032456466223346362544135421");
         r1.printGene();
+
         Map a = new Map();
         a.init_map(EVOLUTION.ROW,EVOLUTION.COL,EVOLUTION.POSSIBILITY);
+
+        r1.initializeTraceMap(a.map);
         a.showMapInSymbol();
+
         for(int i=0;i<100;i++){
             System.out.println("STEP: " + i + " SOCORE: "+ r1 .score);
             r1.singleAction(a.map);
-            a.showMapInSymbol();
+            r1.showRouteInSymbol();
             try {
                 Thread.sleep(0);
             } catch (InterruptedException e) {

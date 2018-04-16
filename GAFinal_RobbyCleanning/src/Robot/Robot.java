@@ -1,5 +1,6 @@
 package Robot;
 
+import EVOLUTION.EVOLUTION;
 import com.sun.deploy.trace.Trace;
 
 public class Robot {
@@ -83,18 +84,23 @@ public class Robot {
             switch (gene){
                 case 0:
                     randomMove(map);
+                    replaceRoutewith4();
                     break;
                 case 1:
                     moveLeft(map);
+                    //replaceRoutewith4();
                     break;
                 case 2:
                     moveDown(map);
+                    //replaceRoutewith4();
                     break;
                 case 3:
                     moveRight(map);
+                    //replaceRoutewith4();
                     break;
                 case 4:
                     moveUp(map);
+                    //replaceRoutewith4();
                     break;
                 case 5: //STAY in the block
                     break;
@@ -103,7 +109,7 @@ public class Robot {
                     break;
             }
 
-            recordTrace(map);
+//            recordTrace(map);
 
 //            System.out.println(" pos after: "+pos[0]+" "+pos[1]);
 //            System.out.println(" score: "+score);
@@ -112,7 +118,7 @@ public class Robot {
         public void recordTrace(int[][] map){
 
 
-        }
+    }
 
         public void moveUp(int[][] map){
             if(map[pos[0]-1][pos[1]] == 2)
@@ -163,6 +169,43 @@ public class Robot {
                 System.out.print(gene[i]);
             }
         }
+
+        public void initializeTraceMap(int[][] map){
+
+            TraceMap = new int[EVOLUTION.ROW+2][EVOLUTION.COL+2];
+            for(int i=0;i<EVOLUTION.ROW+2;i++){
+                for(int j=0;j<EVOLUTION.COL+2;j++){
+                    TraceMap[i][j]= map[i][j];
+                }
+            }
+
+        }
+
+        public void replaceRoutewith4(){
+            TraceMap[pos[0]][pos[1]]=4;
+        }
+
+        public void showRouteInSymbol(){
+            int i,j;
+            for(i=0;i<EVOLUTION.ROW+2;i++){
+                for(j=0;j<EVOLUTION.ROW+2;j++){
+                     if(TraceMap[i][j]==4)
+                         System.out.print("◆");
+                     else if(TraceMap[i][j]== 1)
+                         System.out.print("*");
+
+                     if(TraceMap[i][j]==2)
+                        System.out.print("=");
+                     if(TraceMap[i][j]== 0)
+                        System.out.print(" ");
+
+                        System.out.print(" ");
+            }
+            System.out.println();
+        }
+    }
+
+
     //    @Override
     //    public long hashCode(){
     //        StringBuilder a = new StringBuilder();
